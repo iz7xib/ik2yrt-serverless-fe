@@ -64,6 +64,10 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
+      // Next.js will attempt to re-generate the page:
+      // - When a request comes in
+      // - At most once every second
+      revalidate: 1, // In seconds
       pagination: {
         ...pagination,
         basePath: '/posts',
