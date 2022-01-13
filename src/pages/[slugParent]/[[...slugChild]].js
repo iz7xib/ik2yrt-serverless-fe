@@ -158,7 +158,7 @@ export async function getStaticPaths() {
     });
 
   return {
-    paths,
+    paths: paths.filter(({ params }) => typeof params.slugParent === 'string'),
     fallback: false,
   };
 }

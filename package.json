@@ -1,9 +1,9 @@
 {
   "name": "next-wordpress-starter",
-  "homepage": "https://next-wordpress-starter.spacejelly.dev",
+  "homepage": "https://www.ik2yrt.eu/",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "Colby Fayock <hello@colbyfayock.com>",
+  "author": "Fabio IZ7XIB",
   "scripts": {
     "build": "next build",
     "wpe-build": "npm run build",
