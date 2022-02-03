@@ -27,10 +27,7 @@ export async function getStaticProps() {
         ...pagination,
         basePath: '/posts',
       },
-      // Next.js will attempt to re-generate the page:
-      // - When a request comes in
-      // - At most once every second
-      revalidate: 60, // In seconds
     },
+    revalidate: 60, // In seconds
   };
 }
