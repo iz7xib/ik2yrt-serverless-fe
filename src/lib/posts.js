@@ -354,5 +354,6 @@ export async function getPaginatedPosts(currentPage = 1) {
       currentPage: page,
       pagesCount,
     },
+    revalidate: 60, // In seconds
   };
 }
