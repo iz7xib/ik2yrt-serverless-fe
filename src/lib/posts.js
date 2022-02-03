@@ -195,7 +195,7 @@ export async function getRecentPosts({ count }) {
   const sorted = sortObjectsByDate(posts);
   return {
     posts: sorted.slice(0, count),
-    revalidate: 60, // In seconds
+    fallback: 'blocking',
   };
 }
 
@@ -356,5 +356,6 @@ export async function getPaginatedPosts(currentPage = 1) {
       currentPage: page,
       pagesCount,
     },
+    fallback: 'blocking',
   };
 }

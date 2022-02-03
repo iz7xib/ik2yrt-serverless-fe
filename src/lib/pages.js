@@ -110,7 +110,7 @@ export async function getAllPages() {
 
   return {
     pages,
-    revalidate: 60, // In seconds
+    fallback: 'blocking',
   };
 }
 

@@ -57,7 +57,7 @@ App.getInitialProps = async function (appContext) {
     recentPosts,
     categories,
     menus,
-    revalidate: 60, // In seconds
+    fallback: 'blocking',
   };
 };
 
