@@ -195,6 +195,7 @@ export async function getRecentPosts({ count }) {
   const sorted = sortObjectsByDate(posts);
   return {
     posts: sorted.slice(0, count),
+    revalidate: 60, // In seconds
   };
 }
 
@@ -350,10 +351,10 @@ export async function getPaginatedPosts(currentPage = 1) {
   const sortedPosts = sortStickyPosts(posts);
   return {
     posts: sortedPosts.slice(offset, offset + postsPerPage),
+    revalidate: 60, // In seconds
     pagination: {
       currentPage: page,
       pagesCount,
     },
-    revalidate: 60, // In seconds
   };
 }

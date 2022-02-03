@@ -108,6 +108,7 @@ export async function getAllUsers() {
           noindex: seo.metaRobotsNoindex,
         },
         social: seo.social,
+        fallback: 'blocking',
       };
     });
   }
