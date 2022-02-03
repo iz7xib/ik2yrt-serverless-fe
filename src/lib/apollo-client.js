@@ -1,6 +1,4 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-
-import { removeLastTrailingSlash } from 'lib/util';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 let client;
 
@@ -21,9 +19,7 @@ export function getApolloClient() {
 
 export function _createApolloClient() {
   return new ApolloClient({
-    link: new HttpLink({
-      uri: removeLastTrailingSlash(process.env.WORDPRESS_GRAPHQL_ENDPOINT),
-    }),
+    uri: 'https://www.ik2yrt.eu/graphql',
     cache: new InMemoryCache(),
   });
 }
