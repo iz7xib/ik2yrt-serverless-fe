@@ -154,6 +154,7 @@ export async function getStaticPaths() {
         params: {
           slugParent: segments.shift(),
           slugChild: segments,
+          fallback: 'blocking',
         },
       };
     });
