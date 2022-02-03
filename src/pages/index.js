@@ -68,8 +68,8 @@ export async function getStaticProps() {
         ...pagination,
         basePath: '/posts',
       },
-      fallback: true,
-      revalidate: 1,
+      fallback: 'blocking',
     },
+    revalidate: 60,
   };
 }

@@ -134,6 +134,7 @@ export async function getStaticProps({ params = {} } = {}) {
       page,
       breadcrumbs,
     },
+    revalidate: 60,
   };
 }
 
@@ -159,6 +160,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.filter(({ params }) => typeof params.slugParent === 'string'),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
