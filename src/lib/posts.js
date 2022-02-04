@@ -124,10 +124,12 @@ export async function getAllPosts() {
   });
 
   const posts = data?.data.posts.edges.map(({ node = {} }) => node);
-
-  return {
+  //console.log('TEST____', Array.isArray(posts));
+  const response = {
     posts: Array.isArray(posts) && posts.map(mapPostData),
   };
+  console.log(response);
+  return response;
 }
 
 /**
@@ -342,6 +344,7 @@ export async function getPagesCount(posts, postsPerPage) {
 export async function getPaginatedPosts(currentPage = 1) {
   const { posts } = await getAllPosts();
   const postsPerPage = await getPostsPerPage();
+  console.log(posts);
   const pagesCount = await getPagesCount(posts, postsPerPage);
   let page = Number(currentPage);
   if (typeof page === 'undefined' || isNaN(page) || page > pagesCount) {
