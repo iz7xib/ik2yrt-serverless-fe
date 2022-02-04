@@ -17,7 +17,7 @@ export default function Posts({ posts, pagination }) {
   return <TemplateArchive title={title} posts={posts} slug={slug} pagination={pagination} metadata={metadata} />;
 }
 
-export async function getStaticProps({ params = {} } = {}) {
+export async function getInitialProps({ params = {} } = {}) {
   const { posts, pagination } = await getPaginatedPosts(params?.page);
   return {
     props: {
@@ -31,7 +31,7 @@ export async function getStaticProps({ params = {} } = {}) {
   };
 }
 
-export async function getInitialProps() {
+export async function getStaticPaths() {
   const { posts } = await getAllPosts();
   const pagesCount = await getPagesCount(posts);
   const paths = [...new Array(pagesCount)].map((_, i) => {
