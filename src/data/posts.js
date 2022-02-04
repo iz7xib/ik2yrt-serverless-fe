@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_ALL_POSTS = gql`
   query AllPosts {
-    posts(first: 5, where: { hasPassword: false }) {
+    posts(first: 1000, where: { hasPassword: false }) {
       edges {
         node {
           author {

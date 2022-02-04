@@ -184,6 +184,10 @@ const Nav = () => {
             <a>{title}</a>
           </Link>
         </p>
+        <input id="menu-toggle" type="checkbox" />
+        <label className={styles.menuButtonContainer} htmlFor="menu-toggle">
+          <div className={styles.menuButton}></div>
+        </label>
         <ul className={styles.navMenu}>
           {navigation?.map((listItem) => {
             return <NavListItem key={listItem.id} className={styles.navSubMenu} item={listItem} />;

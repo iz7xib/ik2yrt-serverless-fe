@@ -3,7 +3,9 @@
 .nav {
   width: 100%;
   border-bottom: 1px solid $color-gray-100;
+  background: linear-gradient(to left, $color-blue-100, $color-blue-200);
   padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
 .navSection {
@@ -15,6 +17,7 @@
   padding-top: 0;
   padding-bottom: 0;
   margin: 0;
+  flex-wrap: wrap;
 
   @media (min-width: 480px) {
     justify-content: space-between;
@@ -29,6 +32,7 @@
   flex-shrink: 0;
   flex-grow: 1;
   margin: 0.8em 0 0;
+  flex-wrap: wrap;
 
   @media (min-width: 480px) {
     justify-content: flex-start;
@@ -54,6 +58,7 @@
 }
 
 .navSearch {
+  position: relative;
   flex-grow: 0;
   margin-left: 1em;
   form {
@@ -156,11 +161,10 @@
 
 .navMenu {
   display: flex;
-  align-items: center;
-  flex-grow: 0;
-  list-style: none;
-  padding: 0;
+  flex-direction: row;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
 
   li {
     position: relative;
@@ -229,5 +233,61 @@
         padding: 0.3em;
       }
     }
+  }
+}
+.navMenu {
+  .menuButtonContainer {
+    border: 2px solid red;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .menuButton,
+  .menuButton::before,
+  .menuButton::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .menuButton::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .menuButton::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #menu-toggle:checked + .menuButtonContainer .menuButton::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #menu-toggle:checked + .menuButtonContainer .menuButton {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-toggle:checked + .menuButtonContainer .menuButton::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navMenu {
+    display: none;
   }
 }
