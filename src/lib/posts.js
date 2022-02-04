@@ -344,7 +344,6 @@ export async function getPagesCount(posts, postsPerPage) {
 export async function getPaginatedPosts(currentPage = 1) {
   const { posts } = await getAllPosts();
   const postsPerPage = await getPostsPerPage();
-  console.log(posts);
   const pagesCount = await getPagesCount(posts, postsPerPage);
   let page = Number(currentPage);
   if (typeof page === 'undefined' || isNaN(page) || page > pagesCount) {
@@ -354,7 +353,6 @@ export async function getPaginatedPosts(currentPage = 1) {
   const sortedPosts = sortStickyPosts(posts);
   return {
     posts: sortedPosts.slice(offset, offset + postsPerPage),
-    revalidate: 60, // In seconds
     pagination: {
       currentPage: page,
       pagesCount,

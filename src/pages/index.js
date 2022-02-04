@@ -62,8 +62,6 @@ export default function Home({ posts, pagination }) {
 
 export async function getInitialProps() {
   const { posts, pagination } = await getPaginatedPosts();
-  console.log('ciao bellA', !!posts);
-  console.log('ciao bellO', Array.isArray(posts));
   return {
     props: {
       posts,
