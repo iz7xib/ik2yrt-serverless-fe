@@ -31,7 +31,7 @@ export async function getStaticProps({ params = {} } = {}) {
   };
 }
 
-export async function getStaticPaths() {
+export async function getInitialProps() {
   const { posts } = await getAllPosts();
   const pagesCount = await getPagesCount(posts);
   const paths = [...new Array(pagesCount)].map((_, i) => {
