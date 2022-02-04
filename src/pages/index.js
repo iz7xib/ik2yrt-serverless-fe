@@ -59,7 +59,7 @@ export default function Home({ posts, pagination }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getInitialProps() {
   const { posts, pagination } = await getPaginatedPosts();
   return {
     props: {
