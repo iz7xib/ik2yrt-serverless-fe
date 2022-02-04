@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_ALL_PAGES = gql`
   {
-    pages(first: 10000, where: { hasPassword: false }) {
+    pages(first: 10, where: { hasPassword: false }) {
       edges {
         node {
           children {

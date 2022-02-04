@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_ALL_USERS = gql`
   {
-    users(first: 10000) {
+    users(first: 10) {
       edges {
         node {
           avatar {
@@ -27,7 +27,7 @@ export const QUERY_ALL_USERS = gql`
 
 export const QUERY_ALL_USERS_SEO = gql`
   {
-    users(first: 10000) {
+    users(first: 10) {
       edges {
         node {
           id
