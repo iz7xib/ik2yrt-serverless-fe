@@ -124,11 +124,11 @@ export async function getAllPosts() {
   });
 
   const posts = data?.data.posts.edges.map(({ node = {} }) => node);
-  //console.log('TEST____', Array.isArray(posts));
+
   const response = {
     posts: Array.isArray(posts) && posts.map(mapPostData),
   };
-  console.log(response);
+
   return response;
 }
 
