@@ -313,7 +313,7 @@ function generateSitemap({ posts = [], pages = [] }) {
         ${pages
           .map((page) => {
             return `<url>
-                      <loc>${homepage}/${page.slug}</loc>
+                      <loc>${homepage}${page.slug}</loc>
                       <priority>0.3</priority>
                       <lastmod>${new Date(page.modified).toISOString()}</lastmod>
                     </url>
@@ -323,7 +323,7 @@ function generateSitemap({ posts = [], pages = [] }) {
           ${posts
             .map((post) => {
               return `<url>
-                        <loc>${homepage}/posts/${post.slug}</loc>
+                        <loc>${homepage}posts/${post.slug}</loc>
                         <lastmod>${new Date(post.modified).toISOString()}</lastmod>
                       </url>
                   `;
