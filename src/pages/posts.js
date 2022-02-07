@@ -11,7 +11,7 @@ export default function Posts({ posts, pagination }) {
   const { metadata } = usePageMetadata({
     metadata: {
       title,
-      description: false,
+      description: true,
     },
   });
 

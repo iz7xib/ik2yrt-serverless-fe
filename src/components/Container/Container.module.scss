@@ -4,10 +4,13 @@
   max-width: 60rem;
   padding: 0 2rem;
   margin: 0 auto;
+
+  .sharedaddy {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   .wp-block-image {
-    border: 2px solid red;
     img {
       width: 100%;
       height: 200px;
