@@ -18,6 +18,7 @@ export default function Home({ posts, pagination }) {
   return (
     <Layout>
       <WebsiteJsonLd siteTitle={title} />
+      <meta name="google-site-verification" content="ZtPDWikJI9Q3ApdCDAREvJRfKC1WcMYwdaaytwVp6BY" />
       <Header>
         <h1
           dangerouslySetInnerHTML={{
