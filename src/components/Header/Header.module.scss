@@ -3,7 +3,6 @@
 @import "styles/components/_container";
 
 .header {
-  // border:2px solid yellow;
   margin: 5rem 0;
 
   h1 {
@@ -41,5 +40,10 @@
   figure {
     margin-left: -2rem;
     margin-right: -2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header:not([data-home="true"]) {
+    margin: 0px;
   }
 }

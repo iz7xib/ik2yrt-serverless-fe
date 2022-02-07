@@ -18,7 +18,7 @@ export default function Home({ posts, pagination }) {
   return (
     <Layout>
       <WebsiteJsonLd siteTitle={title} />
-      <Header>
+      <Header isHome={true}>
         <h1
           dangerouslySetInnerHTML={{
             __html: title,
